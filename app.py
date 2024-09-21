@@ -1,6 +1,6 @@
+import os
 from flask import Flask, render_template, request, send_file, redirect, url_for, after_this_request
 import yt_dlp
-import os
 import logging
 import threading
 import time
@@ -17,6 +17,9 @@ DOWNLOAD_DIR = os.path.join(os.getcwd(), 'downloads')
 # Ensure the download directory exists
 if not os.path.exists(DOWNLOAD_DIR):
     os.makedirs(DOWNLOAD_DIR)
+
+# Environment port from Render
+PORT = int(os.getenv('PORT', 10000))
 
 def clear_download_folder():
     """Clear all files in the download folder."""
@@ -104,4 +107,5 @@ def download_video():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Bind to the port specified by the environment variable
+    app.run(host='0.0.0.0', port=PORT, debug=True)

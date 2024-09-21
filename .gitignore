@@ -1,0 +1,60 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Flask
+instance/
+.env
+venv/
+
+# Pytest
+.pytest_cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Linux
+*.swp
+
+# Pipenv
+Pipfile
+Pipfile.lock
+
+# pyenv
+.python-version
+
+# Docker
+*.dockerignore
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
